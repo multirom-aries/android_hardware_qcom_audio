@@ -101,12 +101,13 @@ ifeq ($(strip $(BOARD_USES_SEPERATED_FM)),true)
     common_cflags += -DSEPERATED_FM
 endif
 
-ifeq ($(BOARD_HAVE_AUDIENCE_A2220),true)
-    common_cflags += -DUSE_A2220
+
+ifeq ($(BOARD_HAVE_AUDIENCE_ES310),true)
+    common_cflags += -DUSE_ES310
 endif
 
-ifeq ($(BOARD_HAVE_SAMSUNG_AUDIO),true)
-    common_cflags += -DSAMSUNG_AUDIO
+ifeq ($(TARGET_PRODUCT),taurus)
+    common_cflags += -DTAURUS
 endif
 
 ifeq ($(BOARD_HAVE_NEW_QCOM_CSDCLIENT),true)
